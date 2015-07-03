@@ -53,6 +53,8 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'dalli'
+  gem 'memcachier'
 end
 
 gem 'rails_admin'
