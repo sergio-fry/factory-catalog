@@ -1,0 +1,7 @@
+<h1>Каталог заводов России</h1>
+
+
+<% for factory in Factory.order("created_at DESC") %>
+  <%= link_to factory.title, factory %>
+  <br />
+<% end %>

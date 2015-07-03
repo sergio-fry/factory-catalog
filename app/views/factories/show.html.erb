@@ -1,0 +1,14 @@
+<h1><%= @factory.title %></h1>
+
+<p><%= @factory.subtitle %></p>
+
+<p><%= @factory.description %></p>
+
+<p><%= @factory.products %></p>
+
+<% { city: "Город", address: "Адрес", phone: "Телефон", site: "Сайт", email: "Email" }.each do |attr, title| %>
+  <% next if @factory[attr].blank? %>
+
+  <p><%= title %>: <%= @factory[attr] %></p>
+<% end %>
+
