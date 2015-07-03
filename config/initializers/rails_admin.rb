@@ -31,4 +31,10 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.authorize_with do
+    authenticate_or_request_with_http_basic('Admin') do |username, password|
+      username == 'manager' && password == 'h6Gd7298rTd'
+    end
+  end
 end
