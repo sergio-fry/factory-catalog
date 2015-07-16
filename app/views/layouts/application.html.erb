@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <title>FactoryCatalog</title>
-  <%= stylesheet_link_tag    'http://yastatic.net/bootstrap/3.3.4/css/bootstrap.min.css' %>
+  <%= stylesheet_link_tag '//yastatic.net/bootstrap/3.3.4/css/bootstrap.min.css' %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -12,7 +12,7 @@
 <body>
 <%= render "shared/google_tag_manager" %>
 
-<div class="container">
+<div class="container ns-<%= params[:controller] %> ns-<%= params[:controller] %>-<%= params[:action] %>">
   <%= yield %>
 </div>
 

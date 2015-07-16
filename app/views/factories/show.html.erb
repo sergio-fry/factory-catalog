@@ -1,5 +1,10 @@
-
-<%= @factory.category.try(:title) %> ->
+<ol class="breadcrumb">
+  <li><a href="/">Каталог заводов России</a></li>
+  <% if @factory.category.present? %>
+    <li><%= link_to @factory.category.title, @factory.category %></li>
+  <% end %>
+  <li class="active"><%= @factory.title  %></li>
+</ol>
 
 <h1><%= @factory.title %> <small><%= @factory.subtitle %></small></h1>
 
@@ -7,10 +12,12 @@
 
 <hr />
 
-<p><%= @factory.description %></p>
+<%= simple_format @factory.description %>
 
-<p><%= @factory.products %></p>
+<h2>Продукция</h2>
+<%= simple_format @factory.products %>
 
+<h2>Контакты</h2>
 <% { city: "Город", address: "Адрес", phone: "Телефон",  email: "Email" }.each do |attr, title| %>
   <% next if @factory[attr].blank? %>
 
@@ -18,6 +25,6 @@
 <% end %>
 
 <% if @factory.site.present? %>
-  <p>Официальный сайт: <%= link_to  @factory.site, @factory.site, :title => "Официальный сайт #{@factory.title }", :target => "_blank" %></p>
+       <p>Официальный сайт: <%= factory_site_link @factory %>
 <% end %>
 

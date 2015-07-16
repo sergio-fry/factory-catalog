@@ -1,0 +1,12 @@
+<ol class="breadcrumb">
+  <li><a href="/">Каталог заводов России</a></li>
+  <li class="active"><%= @category.title  %></li>
+</ol>
+
+<h1><%= @category.title %></h1>
+<hr />
+
+<% for factory in @category.factories.order("created_at DESC") %>
+  <h2><%= link_to factory.title, factory %> <small><%= factory.subtitle %></small></h2>
+  <br />
+<% end %>

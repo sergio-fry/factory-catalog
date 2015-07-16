@@ -3,7 +3,7 @@
 <div class="row">
   <% for category in Category.all %>
     <div class="col-sm-6 col-md-4">
-      <h2><%= category.title %></h2>
+      <h2><%= link_to category.title, category %></h2>
       <% for factory in category.factories.order("created_at DESC") %>
         <%= link_to factory.title, factory %>
         <br />
