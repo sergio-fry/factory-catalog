@@ -1,9 +1,9 @@
 
 <%= @factory.category.try(:title) %> ->
 
-<h1><%= @factory.title %></h1>
+<h1><%= @factory.title %> <small><%= @factory.subtitle %></small></h1>
 
-<em><%= @factory.subtitle %></em>
+
 
 <hr />
 
@@ -11,9 +11,13 @@
 
 <p><%= @factory.products %></p>
 
-<% { city: "Город", address: "Адрес", phone: "Телефон", site: "Сайт", email: "Email" }.each do |attr, title| %>
+<% { city: "Город", address: "Адрес", phone: "Телефон",  email: "Email" }.each do |attr, title| %>
   <% next if @factory[attr].blank? %>
 
   <p><%= title %>: <%= @factory[attr] %></p>
+<% end %>
+
+<% if @factory.site.present? %>
+  <p>Официальный сайт: <%= link_to  @factory.site, @factory.site, :title => "Официальный сайт #{@factory.title }", :target => "_blank" %></p>
 <% end %>
 

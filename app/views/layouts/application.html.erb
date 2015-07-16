@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <title>FactoryCatalog</title>
+  <%= stylesheet_link_tag    'http://yastatic.net/bootstrap/3.3.4/css/bootstrap.min.css' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,7 +12,9 @@
 <body>
 <%= render "shared/google_tag_manager" %>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

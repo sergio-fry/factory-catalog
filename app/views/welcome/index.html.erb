@@ -1,7 +1,14 @@
 <h1>Каталог заводов России</h1>
 
+<div class="row">
+  <% for category in Category.all %>
+    <div class="col-sm-6 col-md-4">
+      <h2><%= category.title %></h2>
+      <% for factory in category.factories.order("created_at DESC") %>
+        <%= link_to factory.title, factory %>
+        <br />
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
-<% for factory in Factory.order("created_at DESC") %>
-  <%= link_to factory.title, factory %>
-  <br />
-<% end %>
