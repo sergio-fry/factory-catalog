@@ -82,6 +82,4 @@ test:
 #
 production:
   <<: *default
-  database: factory_catalog_production
-  username: factory_catalog
-  password: <%= ENV['FACTORY_CATALOG_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
