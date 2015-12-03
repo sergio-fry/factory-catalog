@@ -1,3 +1,4 @@
+# encoding: utf-8
 module FactoriesHelper
   def factory_site_link(factory)
     text = URI(factory.site).host rescue factory.site
